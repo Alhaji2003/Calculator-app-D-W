@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1a1b1c;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+.calculator {
+  position: relative;
+  height: auto;
+  width: auto;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: pointer;
+  z-index: 1;
+}
+.theme-toggle.active {
+  color: #333;
+}
+.theme-toggle.active::before {
+  background-color: #fff;
+}
+.theme-toggle::before {
+  content: '';
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #333;
+  z-index: -1;
+}
+
+.display-screen {
+  height: 130px;
+  max-width: 300px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  padding-top: 10px;
+  padding-right: 20px;
+  background-color: #ecf0f3;
+  box-shadow: inset -5px -5px 12px #ffffff,
+    inset 5px 5px 12px rgba(0, 0, 0, 0.16);
+}
+
+#showNumber {
+  width: 100%;
+  font-size: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 10px;
+  font-weight: 200;
+  height: 30px;
+  margin-top: 5px;
+  font-weight: 300;
+  
+}
+
+#display {
+  width: 100%;
+  font-size: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow-x: scroll;
+  padding-right: 10px;
+}
+
+#display::-webkit-scrollbar {
+  display: block;
+  height: 3px;
+}
+
+button {
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 30px;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button#equal {
+  height: 130px;
+}
+
+/* LIGHT THEME */
+
+.calculator {
+  background-color: #ecf0f3;
+  box-shadow: inset -5px -5px 12px #ffffff,
+    inset 5px 5px 12px rgba(0, 0, 0, 0.16);
+}
+
+.calculator #showNumber {
+  color: #0a1e23;
+}
+.calculator #display {
+  color: #0a1e23;
+}
+
+.calculator button#clear {
+  background-color: #ffd5d8;
+  color: #fc4552;
+}
+
+.calculator button.btn-number {
+  background-color: #c3eaff;
+  color: #000;
+}
+
+.calculator button.btn-operator {
+  background-color: #ffd0fd;
+  color: #f967f3;
+}
+
+.calculator button.btn-equal {
+  background-color: #adf9e7;
+  color: #000;
+}
+
+/*END LIGHT THEME */
+
+/* DARK THEME */
+.calculator.dark {
+  background-color: #1a1b1c;
+  box-shadow: inset -5px -5px 12px black, inset 5px 5px 12px rgba(0, 0, 0, 0.16);
+}
+.display-screen {
+  box-shadow: inset -5px -5px 12px #ffffff,
+    inset 5px 5px 12px rgba(0, 0, 0, 0.16);
+}
+
+.calculator.dark #showNumber {
+  color: #0a1e23;
+}
+.calculator.dark #display {
+  color: #0a1e23;
+}
+
+.calculator.dark button#clear {
+  background-color: #2d191e;
+  color: #bd3740;
+}
+
+.calculator.dark button.btn-number {
+  background-color: #1b2f38;
+  color: #f8fafb;
+}
+
+.calculator.dark button.btn-operator {
+  background-color: orangered;
+  color: black;
+}
+
+.calculator.dark button.btn-equal {
+  background-color: #223323;
+  color: #ffffff;
+}
+/*END DARK THEME */
